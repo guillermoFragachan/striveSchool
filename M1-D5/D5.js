@@ -9,21 +9,51 @@ ASSIGNMENT RULES
 /* EXERCISE 1
 Write a function "area" which receives 2 parameters (l1,l2) and calculates the area of the associated rectangle.
 */
+function calculatesArea(a, b){
+    let area = a * b
+    return area
+}
 
 /* EXERCISE 2
-Write a function "crazySum" which receives two integers. It should return the sum of those two values, but if the two values are the same then it should return their sum multiplied by 3.
+Write a function "crazySum" which receives two integers. It should return the sum of those two values, but if the two values are the same then it 
+should return their sum multiplied by 3.
 */
+
+function crazySum(a, b){
+    let sum 
+    if (a === b){
+        sum = (a + b) * 3
+    }else {
+        sum= a + b
+    }
+    return sum
+}
 
 /* EXERCISE 3
 Write a function "crazyDiff" that computes the absolute difference between a given number and 19. 
 It should return triple their absolute difference if the given number is greater than 19.
 */
 
+function crazyDiff (a){
+    let diff = a - 19 
+    return diff
+}
+
 /* EXERCISE 4
 Write a function "boundary" which accept an integer n and returns true if n is within 20 and 100 (included) or if it's equal to 400.
 */
 
-/* WRITE YOUR CODE HERE */
+function boundary (n){
+    let binary
+    if (n>19 && n<101) {
+        binary = true
+    }else if (n===400) {
+        binary = true
+    }else{
+        binary = false
+    }
+    return binary
+}
 
 /* EXERCISE 5
 Write a function "strivify" which accepts a string.
