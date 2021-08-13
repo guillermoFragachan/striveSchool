@@ -6,6 +6,14 @@ ASSIGNMENT RULES
 - You can Google / use StackOverflow BUT we suggest you to use just the material provided
 */
 
+/*
+ASSIGNMENT RULES
+- All the answers must be written in JavaScript
+- You can ask for help, reach the Teaching Assistants if needed
+- The solution must be available for the tutors by the end of the day (5PM CET)
+- You can Google / use StackOverflow BUT we suggest you to use just the material provided
+*/
+
 /* EXERCISE 1
 Write a function "area" which receives 2 parameters (l1,l2) and calculates the area of the associated rectangle.
 */
@@ -70,32 +78,83 @@ Write a function "check3and7" which accepts a positive number and check if it is
 HINT: Module Operator
 */
 
-/* WRITE YOUR CODE HERE */
+function check3and7(n){
+    let boolean 
+    if (n%3=== 0 || n%7===0) {
+        boolean = true
+    }else{
+        boolean = false
+    }
+    return boolean
+}
+
+console.log(check3and7 (3))
 
 /* EXERCISE 7
 Write a function "reverseString" to programmatically reverse a given string (es.: Strive => evirtS).
 */
+function reverseString (_string){
+    let reveresedString
+    
+    let arr = _string.split("")
 
-/* WRITE YOUR CODE HERE */
+    reveresedString = arr.reverse()
+    
+
+    return reveresedString
+
+    
+}
+
+console.log(reverseString("hello world"))
+
+
 
 /* EXERCISE 8
+
 Write a function "upperFirst" to capitalize the first letter of each word of a given string passed as a parameter.
 */
 
-/* WRITE YOUR CODE HERE */
+function upperFirst(a){
 
+    
+    a += a[0].toUpperCase()
+    
+    return a[0].toUpperCase()
+
+}
+
+console.log(upperFirst('upper'))
 /* EXERCISE 9
 Write a function "cutString" to create a new string without the first and last character of a given string.
 */
+str= 'string example'
+str.slice(1,str.lenght)
+function cut(str){
+    
 
-/* WRITE YOUR CODE HERE */
+    let stringconversion=str.slice(1, str.lenght-1)
+    return stringconversion
+
+}
+
+console.log(str)
+
 
 /* EXERCISE 10
 Write a function "giveMeRandom" which accepts a number n and returns an array containing n random numbers between 0 and 10.
 */
 
-/* WRITE YOUR CODE HERE */
+function giveMeRandom(n){
 
+    let arr= [] 
+    for(i=0; i<n; i++){
+        arr.push(Math.floor((Math.random() * 10)))
+    }
+    return arr
+}
+
+console.log(giveMeRandom(4))
 /* WHEN YOU ARE FINISHED
 Commit and push the code to your personal GitHub repository and share the link to your commit in Eduflow.
 */
