@@ -221,13 +221,33 @@ Check if the email is valid using string methods. The email (in this example) is
 Write a function that receives a date d as parameter and calculates the number of days passes since the d.
 */
 
-/* WRITE YOUR CODE HERE */
+let date  = new Date()
+date.setFullYear(2021, 8, 1);
+console.log(date.getDate())
 
+
+
+function daysSince(d) {
+
+    let now
+    let dateNow= new Date()
+    now = dateNow.getDate()
+    let before = d.getDate()
+    
+
+    return now - before
+
+}
+
+console.log(daysSince(date))
 /* EXERCISE 21
 Write a function "matrixGenerator" that receives x and y as parameter. The result should be a matrix of x times y with, as value, the index of the position.
 Ex.: X = 3, Y = 2
 ["00","01","02"
 "10","11","12"]
 */
+
+
+
 
 /* WRITE YOUR CODE HERE */
