@@ -138,10 +138,6 @@ function latestShoppingCart(_shoppingCart){
 }
 
 console.log(latestShoppingCart(shoppingCart))
-//E-COMMERCE
-
-
-
 
 
 
@@ -149,12 +145,29 @@ console.log(latestShoppingCart(shoppingCart))
 Create a function "loopUntil" which receives an integer x between 0 and 9.
 The function loops and prints a random number between 0 and 9 until the random number is bigger than x for three times in a row.
 */
+let int = 5
+function loopUntil (_interger){
+    let randomNumber 
 
-/* WRITE YOUR CODE HERE */
+    for (let i = 0; i < 3; i++) {
+        randomNumber = int + Math.floor((Math.random()   *10) )
+        console.log(randomNumber)
+    }
+    return 
 
+
+}
+
+console.log(loopUntil(int))
 /* EXERCISE 17
 Write a function "average" which receives an array and return the average value. The function automatically skips non-numeric entries in the array.
 */
+
+
+function average (_array){
+
+}
+
 
 /* WRITE YOUR CODE HERE */
 
