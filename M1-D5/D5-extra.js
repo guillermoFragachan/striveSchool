@@ -157,8 +157,7 @@ function loopUntil (_interger){
 
 
 }
-
-console.log(loopUntil(int))
+console.log ('-------------------------------------------------------------------------------------------------------------------')
 /* EXERCISE 17
 Write a function "average" which receives an array and return the average value. The function automatically skips non-numeric entries in the array.
 */
@@ -187,6 +186,7 @@ function average (_array){
 let a = ['sdasad', 12, 12, 10, '21312']
 
 console.log(average (a))
+console.log ('-------------------------------------------------------------------------------------------------------------------')
 
 /* EXERCISE 18
 Write a function "longest" to find the longest string from an given array of strings.
@@ -259,15 +259,25 @@ Ex.: X = 3, Y = 2
 ["00","01","02"
 "10","11","12"]
 */
-let x = 1
-let y = 10
+let x = 3
+let y = 5
 
 function matrixGenerator(x, y) {
     let matrix = []
     let randomValue 
 
-    for (let i = 0; i < x + y; i++) {
-        matrix.push(randomValue = Math.floor(Math.random() *10))
+    for (let i = 0; i <  y; i++) {
+        matrix.push([])
+
+
+    }
+    for (let i = 0; i < x; i++) {
+        
+
+        for (let i = 0; i < y; i++) {
+            matrix[i].push(randomValue = Math.floor(Math.random() *10))
+            
+        }
         
     }
 
