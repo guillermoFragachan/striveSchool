@@ -214,17 +214,30 @@ console.log(longestString(stringArray))
 Write a function to create a very simple anti spam filter for your mailbox. The function takes a string emailContent, and returns a boolean.
 Check if the email is valid using string methods. The email (in this example) is valid if the words SPAM and SCAM does not appear.
 */
+let emailContent = "dsadsahdoas spam dsada"
+function spamChecker(_email) {
+    let content = emailContent.toUpperCase()
+    let words = content.split(' ') 
+    let valid = true
+    for (let i = 0; i < words.length; i++) {
+        if (words[i] === 'SPAM' || words[i]=== 'SCAM') {
+            valid = false
+        }
+       
+        
+    }
 
-/* WRITE YOUR CODE HERE */
+    return valid
+    
+}
 
+console.log(spamChecker(emailContent))
 /* EXERCISE 20
 Write a function that receives a date d as parameter and calculates the number of days passes since the d.
 */
 
 let date  = new Date()
 date.setFullYear(2021, 8, 1);
-console.log(date.getDate())
-
 
 
 function daysSince(d) {
