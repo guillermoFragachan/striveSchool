@@ -187,13 +187,28 @@ function average (_array){
 let a = ['sdasad', 12, 12, 10, '21312']
 
 console.log(average (a))
-/* WRITE YOUR CODE HERE */
 
 /* EXERCISE 18
 Write a function "longest" to find the longest string from an given array of strings.
 */
 
-/* WRITE YOUR CODE HERE */
+let stringArray = ['pp', 'lll','qqqqqqqqqqq', '99999']
+function longestString(_stringArray){
+    let longestString = ['p']
+    for (let i = 0; i < _stringArray.length; i++) {
+
+        if (_stringArray[i].length > longestString[0]) {
+            
+            longestString.push(_stringArray[i]) 
+        }
+        
+    }
+
+    return longestString[2]
+}
+
+console.log(longestString(stringArray))
+
 
 /* EXERCISE 19
 Write a function to create a very simple anti spam filter for your mailbox. The function takes a string emailContent, and returns a boolean.
