@@ -259,8 +259,22 @@ Ex.: X = 3, Y = 2
 ["00","01","02"
 "10","11","12"]
 */
+let x = 1
+let y = 10
 
+function matrixGenerator(x, y) {
+    let matrix = []
+    let randomValue 
 
+    for (let i = 0; i < x + y; i++) {
+        matrix.push(randomValue = Math.floor(Math.random() *10))
+        
+    }
 
+    return matrix
+    
+}
+
+console.log(matrixGenerator(x,y))
 
 /* WRITE YOUR CODE HERE */
