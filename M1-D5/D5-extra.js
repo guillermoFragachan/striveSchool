@@ -34,13 +34,63 @@ function checkArray (_array){
     return sumOfElements
 
 }
-console.log(checkArray(giveMeRandom(10)))
+
 /* EXERCISE 12
 In your eCommerce you have an array of objects called shoppingCart. In this array you have a number of objects with a price, a name, an id and the quantity to be shipped.
 Create a function "shippingCartTotal" which calculates the total due to the shop.
 */
 
-/* WRITE YOUR CODE HERE */
+const shoppingCart = [
+    item1 = {
+        id: 2121,
+        name: 'Earphones',
+        price: 5,
+        quantity: 3
+    },
+    item2 ={
+        id: 3213,
+        name: 'Iphone',
+        price: 5,
+        quantity: 1
+    },
+    item3 = {
+        id: 4841,
+        name: 'Mouse',
+        price: 5,
+        quantity: 1
+    }
+]
+
+
+
+
+
+function shoppingCartTotal (_shoppingCart){
+    let totalPrice = 0
+    for (let i = 0; i < _shoppingCart.length; i++) {
+        totalPrice += shoppingCart[i].price * shoppingCart[i].quantity;
+        
+    }
+
+
+    return totalPrice
+}
+
+console.log(shoppingCartTotal(shoppingCart))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* EXERCISE 13
 In your eCommerce you have an array of objects called shoppingCart. In this array you have a number of objects with a price, a name, an id and the quantity to be shipped.
