@@ -194,17 +194,16 @@ Write a function "longest" to find the longest string from an given array of str
 
 let stringArray = ['pp', 'lll','qqqqqqqqqqq', '99999']
 function longestString(_stringArray){
-    let longestString = ['p']
+    let newArr = ['s']
     for (let i = 0; i < _stringArray.length; i++) {
-
-        if (_stringArray[i].length > longestString[0]) {
-            
-            longestString.push(_stringArray[i]) 
+        if (_stringArray[i].length  > newArr[i].length) {
+            newArr.push(stringArray[i])
         }
         
+        
     }
-
-    return longestString[2]
+    let lastValue = newArr.length-1
+    return newArr[lastValue]
 }
 
 console.log(longestString(stringArray))
@@ -259,9 +258,6 @@ Ex.: X = 3, Y = 2
 ["00","01","02"
 "10","11","12"]
 */
-let x = 3
-let y = 5
-
 function matrixGenerator(x, y) {
     let matrix = []
     let randomValue 
@@ -285,6 +281,6 @@ function matrixGenerator(x, y) {
     
 }
 
-console.log(matrixGenerator(x,y))
+console.log(matrixGenerator(2,2))
 
 /* WRITE YOUR CODE HERE */
