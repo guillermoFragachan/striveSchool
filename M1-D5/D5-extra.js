@@ -3,8 +3,38 @@ Write a function "checkArray" which receives an array of random numbers (created
 The function returns the sum of the numbers bigger than 5.
 */
 
-/* WRITE YOUR CODE HERE */
+function giveMeRandom(n){
 
+    let arr= [] 
+    for(i=0; i<n; i++){
+        arr.push(Math.floor((Math.random() * 10)))
+    }
+    return arr
+}
+
+
+function checkArray (_array){
+    let array = _array
+    let arrayThan5 =[]
+    let sumOfElements = 0
+
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] > 4 ) {
+
+            arrayThan5.push(array[i])
+            
+
+        }        
+    }
+    console.log(arrayThan5)
+    for (let i = 0; i < arrayThan5.length; i++) {
+        sumOfElements += arrayThan5[i]
+        
+    }
+    return sumOfElements
+
+}
+console.log(checkArray(giveMeRandom(10)))
 /* EXERCISE 12
 In your eCommerce you have an array of objects called shoppingCart. In this array you have a number of objects with a price, a name, an id and the quantity to be shipped.
 Create a function "shippingCartTotal" which calculates the total due to the shop.

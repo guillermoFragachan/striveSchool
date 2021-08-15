@@ -6,6 +6,8 @@ ASSIGNMENT RULES
 - You can Google / use StackOverflow BUT we suggest you to use just the material provided
 */
 
+const { Console } = require("console")
+
 /*
 ASSIGNMENT RULES
 - All the answers must be written in JavaScript
@@ -125,6 +127,23 @@ function upperFirst(a){
 }
 
 console.log(upperFirst('upper'))
+
+function upperFirst(stringUpperCase) {
+    let words = stringUpperCase.toLowerCase().split(" ");
+
+    console.log(words)
+  
+    for (let i = 0; i < words.length; i++) {
+        console.log(words[i].charAt(0).toUpperCase())
+
+
+        words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
+    }
+    // Directly return the joined string
+    return words.join(" ");
+  }
+  
+  console.log(upperFirst('example for the function'))
 /* EXERCISE 9
 Write a function "cutString" to create a new string without the first and last character of a given string.
 */
@@ -133,7 +152,7 @@ str.slice(1,str.lenght)
 function cut(str){
     
 
-    let stringconversion=str.slice(1, str.lenght-1)
+    let stringconversion=str.slice(1)
     return stringconversion
 
 }
