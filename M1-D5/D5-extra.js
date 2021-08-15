@@ -166,9 +166,27 @@ Write a function "average" which receives an array and return the average value.
 
 function average (_array){
 
+    let numericArray =[]
+    
+    for (let i = 0; i < _array.length; i++) {
+        
+        
+        if (typeof _array[i] === "number") {
+            numericArray.push( _array[i]) 
+        }
+
+        
+    }
+    let totalAverage = 0
+    for (let i = 0; i < numericArray.length; i++) {
+        totalAverage += numericArray[i]
+        
+    }
+    return totalAverage
 }
+let a = ['sdasad', 12, 12, 10, '21312']
 
-
+console.log(average (a))
 /* WRITE YOUR CODE HERE */
 
 /* EXERCISE 18
