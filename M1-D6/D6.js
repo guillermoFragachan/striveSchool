@@ -618,8 +618,9 @@ function halfTree (height) {
   let leafs = '*'
   let leafArray = []
   for (let i = 0; i < height; i++) {
-    leafArray.push(leafs)
     
+    leafArray.push(leafs)
+    console.log(leafArray.join())
   }
  return leafArray
 }
