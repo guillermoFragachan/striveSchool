@@ -470,18 +470,28 @@ function onlyTheTitles (_movies){
 
 function onlyInThisMillennium (_movies){
   let year = []
-  let numericYear = []
+ 
+
   for (let i = 0; i < _movies.length; i++) {
-    year.push(_movies[i].Year)
+    _movies[i].year = +_movies[i].Year
     
-  } 
+  }
+  for (let i = 0; i < _movies.length; i++) {
+    if (_movies[i].Year > 1999) {
+      year.push(_movies[i])
+      
+    }
+    
+    
+    
+  }
 
 
   return year
 }
 
 
-//console.log(onlyInThisMillennium(movies))
+console.log(onlyInThisMillennium(movies))
 
 /* Ex.16 
     Write a function called "getMovieById" which receives an id as a parameter and returns the movie with the given id.
