@@ -112,7 +112,16 @@ function splitMe (_string) {
     Write a function called "deleteOne" which receives a string and a boolean as parameters. If the boolean value is true it should return the string without the first letter, otherwise it should remove the last one from it.
 */
 
-function deleteOne (_sting, _boolean){
+function deleteOne (_string, _boolean){
+      let newString
+
+      if (_boolean === true) {
+        newString = _string.slice(1)
+        
+      }else{
+        newString = _string.slice(0, _string.length -1)
+      }
+      return newString
 
 }
 
@@ -124,14 +133,29 @@ console.log(deleteOne('string', true))
    Ex.: onlyLetters("I have 4 dogs")  => returns "I have  dogs"
 */
 
+function onlyLetters (_string) {
+
+
+}
+
 /* Ex.6 
    Write a function called "isThisAnEmail" which receives a string as a parameter and returns true if the string is a valid email address.
 */
 
 /* Ex.7
    Write a function called "whatDayIsIt" that should return the current day of the week.
+
+
 */
 
+
+function whatDayIsIt (){
+  let dayToday = new Date()
+
+  return dayToday.getDay()
+}
+
+console.log(whatDayIsIt())
 /* Ex.8
     Write a function called "rollTheDices" which receives a number as a parameter.
     It should invoke the dice() function defined in Ex1 the specified amount of times,
