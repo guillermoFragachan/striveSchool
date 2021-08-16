@@ -411,14 +411,24 @@ function deleteProp (_object, _string){
 
 function olderMovie (_movies) {
   let oldest 
+  let year = []
 
   for (let i = 0; i < _movies.length; i++) {
+    year.push(_movies[i].Year)
     
+  } 
+  year.sort()
+  for (let i = 0; i < _movies.length; i++) {
+    if (year[_movies.length-1] === movies[i].Year) {
+      return movies[i]
+      
+    }
     
   }
 
-  return oldest
+
 }
+
 
 console.log(olderMovie(movies))
 
