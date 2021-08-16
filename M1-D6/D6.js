@@ -10,6 +10,8 @@
     - Publish them into your own GitHub account and upload repository link on Eduflow before 16.30 (Berlin Time) 
 */
 
+const { type } = require("os")
+
 //JS Basics
 
 /* Ex.A
@@ -547,30 +549,59 @@ function searchByTitle (_string) {
 
 }
 
-console.log(searchByTitle('Lord'))
+//console.log(searchByTitle('Lord'))
 
 /* Ex.19
     Write a function called "searchAndDivide" which receives a string as a parameter and returns an object;
     this object should contain an array called "match", made by all the movies which contain the given string in the title,
     and another array "unmatch" with all the remaining ones.
 */
-
-/* Ex.20
-   Write a function called "removeIndex" which receives a number as a parameter and returns the movies array without the element in the given position.
-*/
-
-function removeIndex (_n) {
+function searchAndDivide (_string){
+  let arrayWithMovies = {
+    match: [],
+    unmatch: []
+  }
 
   for (let i = 0; i < movies.length; i++) {
-    delete   delete movies[i]._n
+    if (movies[i].Title.includes(_string) === true) {
+      arrayWithMovies.match.push(movies[i])
+    }else{
+      arrayWithMovies.unmatch.push(movies[i])
+    }
     
   }
 
-  return movies 
+  return arrayWithMovies
 
 }
+//console.log(searchAndDivide('Lord'))
 
-//console.log(removeIndex(1))
+/* Ex.20
+   Write a function called "removeIndex" which receives a number as a parameter and returns the movies array without the element in the given position.
+
+*/
+
+function removeIndex (_n) {
+  let movieWithout = movies
+  for (let i = 0; i < movieWithout.length; i++) {
+      if (_n===1) {
+        delete movieWithout[i]['Title']
+      } else if (_n === 2){
+        delete movieWithout[i]['Year']
+      }else if (_n === 3) {
+        delete movieWithout[i]['imdbID']
+      }else if (_n === 4) {
+        delete movieWithout[i]['Type']
+      }else if (_n === 5) {
+        delete movieWithout[i]['Poster']
+      }
+
+    }
+
+    return movieWithout 
+}
+
+console.log(removeIndex(12))
 
 // [EXTRAS] JS Advanced
 
@@ -583,6 +614,8 @@ function removeIndex (_n) {
   ***
 */
 
+
+//console.log(halfTree(3))
 /* Ex.22 
   Create a function called "tree" which receives a number as a parameter and builds an "*" tree with the given height.
   Example: 
@@ -590,10 +623,14 @@ function removeIndex (_n) {
     *  
    *** 
   *****
+
 */
 
 /* Ex.23
   Create a function called "isItPrime" that receives a number as a parameter and returns true if the given number is a prime number.
 */
+
+
+//console.log(isItPrime(12))
 
 /* This movies array is used throughout the exercises. Please don't change it :)  */
