@@ -601,7 +601,7 @@ function removeIndex (_n) {
     return movieWithout 
 }
 
-console.log(removeIndex(12))
+//console.log(removeIndex(12))
 
 // [EXTRAS] JS Advanced
 
@@ -613,6 +613,18 @@ console.log(removeIndex(12))
   **
   ***
 */
+
+function halfTree (height) {
+  let leafs = '*'
+  let leafArray = []
+  for (let i = 0; i < height; i++) {
+    leafArray.push(leafs)
+    
+  }
+ return leafArray
+}
+
+console.log(halfTree(3))
 
 
 //console.log(halfTree(3))
@@ -629,8 +641,26 @@ console.log(removeIndex(12))
 /* Ex.23
   Create a function called "isItPrime" that receives a number as a parameter and returns true if the given number is a prime number.
 */
+function isItPrime (_n) {
+  let primeOrNot 
+  let array = []
+  let array2= []
+  for (let i = 0; i < 100; i++) {
+    if (_n%i === 0 ) {
+      array.push(i) 
+    }else{
+      array2.push(i)
+    }
+  }
+ if (array.length > 2) {
+   primeOrNot = false
+   
+ }else {
+   primeOrNot = true
+ }
+  return primeOrNot
+}
 
-
-//console.log(isItPrime(12))
+console.log(isItPrime(11))
 
 /* This movies array is used throughout the exercises. Please don't change it :)  */
