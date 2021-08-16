@@ -629,7 +629,7 @@ function halfTree (height) {
  return leafArray
 }
 
-halfTree(5)
+//halfTree(5)
 
 
 //console.log(halfTree(3))
@@ -642,6 +642,9 @@ halfTree(5)
   *****
 
 */
+
+
+
 
 /* Ex.23
   Create a function called "isItPrime" that receives a number as a parameter and returns true if the given number is a prime number.
