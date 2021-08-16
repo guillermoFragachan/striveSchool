@@ -193,8 +193,14 @@ function rollTheDices (_number){
     arr.push(dice())
   }
 
+  let sum  = 0
+  for (let i = 0; i < arr.length; i++) {
+    sum = sum + arr[i]
+    
+  }
+
   let dices = {
-    sum:10,
+    sum: sum,
     values: arr
   }
 
