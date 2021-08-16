@@ -620,12 +620,12 @@ function halfTree (height) {
   for (let i = 0; i < height; i++) {
     
     leafArray.push(leafs)
-    console.log(leafArray.join())
+    console.log(leafArray.join(''))
   }
  return leafArray
 }
 
-console.log(halfTree(3))
+halfTree(5)
 
 
 //console.log(halfTree(3))
@@ -662,6 +662,6 @@ function isItPrime (_n) {
   return primeOrNot
 }
 
-console.log(isItPrime(11))
+//console.log(isItPrime(11))
 
 /* This movies array is used throughout the exercises. Please don't change it :)  */
