@@ -134,9 +134,12 @@ function deleteOne (_string, _boolean){
 */
 
 function onlyLetters (_string) {
-
+  return _string = _string.replace(/[0-9]/g, '')
 
 }
+
+
+//console.log(onlyLetters('example 121'))
 
 /* Ex.6 
    Write a function called "isThisAnEmail" which receives a string as a parameter and returns true if the string is a valid email address.
@@ -418,44 +421,123 @@ function olderMovie (_movies) {
     
   } 
   year.sort()
-  for (let i = 0; i < _movies.length; i++) {
-    if (year[_movies.length-1] === movies[i].Year) {
-      return movies[i]
-      
-    }
-    
-  }
+  return year[0]
 
 
 }
 
 
-console.log(olderMovie(movies))
+//console.log(olderMovie(movies))
 
 
 /* Ex.13
     Write a function called "countMovies" which returns the number of movies contained in the array provided at the end of this file.
 */
 
+function countMovies (_movies){
+    let totalMovies = _movies.length
+
+    return totalMovies
+
+
+}
+
+//console.log(countMovies(movies))
+
 /* Ex.14
     Write a function called "onlyTheTitles" which creates an array with just the titles of the movies provided in the array at the end of the file.
 */
+
+function onlyTheTitles (_movies){
+  let titlesArray = []
+
+  for (let i = 0; i < _movies.length; i++) {
+    titlesArray.push(_movies[i].Title)
+    
+  } 
+
+  return titlesArray
+
+
+
+}
+
+//console.log(onlyTheTitles(movies))
 
 /* Ex.15
    Write a function called "onlyInThisMillennium" which returns only the movies produced in this millennium.
 */
 
+function onlyInThisMillennium (_movies){
+  let year = []
+  let numericYear = []
+  for (let i = 0; i < _movies.length; i++) {
+    year.push(_movies[i].Year)
+    
+  } 
+
+
+  return year
+}
+
+
+//console.log(onlyInThisMillennium(movies))
+
 /* Ex.16 
     Write a function called "getMovieById" which receives an id as a parameter and returns the movie with the given id.
 */
+
+function getMovieById (_id){
+  for (let i = 0; i < movies.length; i++) {
+    if (movies[i].imdbID === _id) {
+      return movies[i]
+      
+    }
+    
+  }
+
+}
+
+//console.log(getMovieById('tt0077869'))
 
 /* Ex.17
     Write a function called "sumAllTheYears" which returns the sum of all the years in which the movies provided have been produced.
 */
 
+function sumAllTheYears (_movies) {
+  
+  let year = []
+
+  for (let i = 0; i < _movies.length; i++) {
+    year.push(_movies[i].Year)
+    
+  } 
+  return year
+
+}
+
+//console.log(sumAllTheYears(movies))
+
+
 /* Ex.18
     Write a function called "searchByTitle" which receives a string as a parameter and returns all the movies which contain that string in the title.
 */
+
+function searchByTitle (_string) {
+  let arrayWithMovies = []
+
+  for (let i = 0; i < movies.length; i++) {
+    if (movies[i].Title === _string) {
+      arrayWithMovies.push(movies[i])
+    }
+    
+  }
+
+  return arrayWithMovies
+
+}
+
+//console.log(searchByTitle('Lord'))
 
 /* Ex.19
     Write a function called "searchAndDivide" which receives a string as a parameter and returns an object;
@@ -466,6 +548,19 @@ console.log(olderMovie(movies))
 /* Ex.20
    Write a function called "removeIndex" which receives a number as a parameter and returns the movies array without the element in the given position.
 */
+
+function removeIndex (_n) {
+
+  for (let i = 0; i < movies.length; i++) {
+    delete   delete movies[i]._n
+    
+  }
+
+  return movies 
+
+}
+
+//console.log(removeIndex(1))
 
 // [EXTRAS] JS Advanced
 
