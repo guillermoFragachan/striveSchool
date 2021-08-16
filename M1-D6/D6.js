@@ -126,7 +126,7 @@ function deleteOne (_string, _boolean){
 }
 
 
-console.log(deleteOne('string', true))
+//console.log(deleteOne('string', true))
 
 /* Ex.5
    Write a function called "onlyLetters" which receives a string as a parameter and returns it removing all the digits.
@@ -142,20 +142,40 @@ function onlyLetters (_string) {
    Write a function called "isThisAnEmail" which receives a string as a parameter and returns true if the string is a valid email address.
 */
 
+function isThisAnEmail (_string){
+  let validEmail = false
+  let arr = _string.split('@')
+  let validEmails = ['gmail.com', 'hotmail.com', 'yahoo.es']
+  for (let i = 0; i<_string.length; i++){
+    if (arr[1]===validEmails[i]) {
+      validEmail = true
+      
+    }
+  }
+  
+  return validEmail
+  
+}
+
+
+//console.log(isThisAnEmail('guillerfraagchan@gmail.com'))
+
 /* Ex.7
    Write a function called "whatDayIsIt" that should return the current day of the week.
-
-
 */
 
 
 function whatDayIsIt (){
   let dayToday = new Date()
+  let dayOfTheWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday',' Friday', 'Saturday', 'Sunday']
 
-  return dayToday.getDay()
+
+
+  return dayOfTheWeek[dayToday.getDay()-1]
+
 }
 
-console.log(whatDayIsIt())
+//console.log(whatDayIsIt())
 /* Ex.8
     Write a function called "rollTheDices" which receives a number as a parameter.
     It should invoke the dice() function defined in Ex1 the specified amount of times,
@@ -167,13 +187,71 @@ console.log(whatDayIsIt())
     }
 */
 
+function rollTheDices (_number){
+  let arr = []
+  for (let i=0; i<_number; i++){
+    arr.push(dice())
+  }
+
+  let dices = {
+    sum:10,
+    values: arr
+  }
+
+  return dices
+
+}
+
+console.log(rollTheDices(3))
+
+
+
 /* Ex.9
    Write a function called "howManyDays" which receives a date as a parameter and should return the number of days passed since that date.
 */
 
+let howManyDays = (date) => {
+
+  const today = new Date();
+  today.setHours(0, 0, 0);
+  date.setHours(0, 0, 0);
+
+  let difference =  today.getTime() - date.getTime();
+  difference = ((difference / 1000) / 3600) / 24
+
+  return Math.round(difference);
+};
+
+
+
+
 /* Ex.10
    Write a function called "isTodayMyBirthday" which should return true if today's your birthday, false otherwise.
 */
+
+function isTodayMyBirthday (_date) {
+      let birthdayDate = new Date()
+      birthdayDate.setDate(23)
+      birthdayDate.setMonth(11)
+
+      console.log(birthdayDate.getMonth())
+      if (_date.getDate() === birthdayDate.getDate() &&_date.getMonth() === birthdayDate.getMonth()) {
+          return true
+
+        
+        
+      }else{
+        return false
+      }
+      
+}
+
+let randomDay = new Date()
+randomDay.setDate(23)
+randomDay.setMonth(12)
+
+//console.log(isTodayMyBirthday(randomDay));
+
 
 // JS Arrays // Objs
 // NOTE: movies array is defined at the end of this file!
