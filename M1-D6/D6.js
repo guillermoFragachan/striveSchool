@@ -491,7 +491,7 @@ function onlyInThisMillennium (_movies){
 }
 
 
-console.log(onlyInThisMillennium(movies))
+//console.log(onlyInThisMillennium(movies))
 
 /* Ex.16 
     Write a function called "getMovieById" which receives an id as a parameter and returns the movie with the given id.
@@ -537,7 +537,7 @@ function searchByTitle (_string) {
   let arrayWithMovies = []
 
   for (let i = 0; i < movies.length; i++) {
-    if (movies[i].Title === _string) {
+    if (movies[i].Title.includes(_string) === true) {
       arrayWithMovies.push(movies[i])
     }
     
@@ -547,7 +547,7 @@ function searchByTitle (_string) {
 
 }
 
-//console.log(searchByTitle('Lord'))
+console.log(searchByTitle('Lord'))
 
 /* Ex.19
     Write a function called "searchAndDivide" which receives a string as a parameter and returns an object;
