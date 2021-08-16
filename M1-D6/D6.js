@@ -62,7 +62,7 @@ me.skills = ['javascript', 'html', 'css', 'c++']
 */
 
 me.skills.pop()
-console.log(me)
+
 
 
 // JS Functions
@@ -70,18 +70,54 @@ console.log(me)
     Write a function called "dice"; it should randomize an integer number between 1 and 6.
 */
 
+function dice () {
+  let randomInt = Math.floor(Math.random()*6)
+  if (randomInt === 0){
+    randomInt = randomInt + 1
+  }
+
+
+  return randomInt
+}
 /* Ex.2 
     Write a function called "whoIsBigger" which receives 2 numbers as parameters and returns the biggest one.
 */
+function whoIsBigger (a, b){
+    if (a > b){
+      return a
+    }else{
+      return b
+    }
+
+
+}
+
+
+
+
 
 /* Ex.3
     Write a function called "splitMe" which receives a string as a parameter and returns an array with every word in that string.
     Ex. splitMe("I love coding") => returns ["I", "Love", "Coding"]
 */
 
+function splitMe (_string) {
+  let arr = _string.split(' ')
+
+  return arr
+}
+
+
 /* Ex.4
     Write a function called "deleteOne" which receives a string and a boolean as parameters. If the boolean value is true it should return the string without the first letter, otherwise it should remove the last one from it.
 */
+
+function deleteOne (_sting, _boolean){
+
+}
+
+
+console.log(deleteOne('string', true))
 
 /* Ex.5
    Write a function called "onlyLetters" which receives a string as a parameter and returns it removing all the digits.
