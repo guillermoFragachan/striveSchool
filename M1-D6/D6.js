@@ -423,8 +423,12 @@ function olderMovie (_movies) {
     
   } 
   year.sort()
-  return year[0]
-
+  for (let i = 0; i < _movies.length; i++) {
+    if (year[0]=== movies[i].Year) {
+      return movies [i]
+    }
+    
+  }
 
 }
 
