@@ -642,9 +642,33 @@ function halfTree (height) {
   *****
 
 */
+function makeLayer(number) {
+  return number < 1 ? 1 : makeLayer(number - 1) + 2
+}
 
+function printTree(number) {
+  const layers = []
+  let nOfSpaces = number
 
+  for (let i = 0; i <= number; i++) {
+      layers.push()
 
+      let spaces = ""
+      for (let j = 0; j < nOfSpaces; j++) spaces += " "
+
+      let stars = ""
+      for (let star = 0; star < makeLayer(i); star++) stars += "*"
+
+      layers.push(spaces + stars)
+
+      console.log(layers[i])
+      nOfSpaces--
+  }
+
+  return layers
+}
+
+printTree(5)
 
 /* Ex.23
   Create a function called "isItPrime" that receives a number as a parameter and returns true if the given number is a prime number.
