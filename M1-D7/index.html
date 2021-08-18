@@ -8,11 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <style>
     ​.mystyle {
-        width: 10px;
-        height: 50px;
-        background-color: coral;
-        color: white;
-        font-size: 25px;
+       visibility: hidden;
       }
     </style>
 </head>
@@ -31,6 +27,8 @@
             <li class="nav-item"><button class="btn" onclick="changeFooter()">Fake Address</button></li>
             <li class="nav-item"><button class="btn " onclick="changeAmazon()">link</button></li>
             <li class="nav-item"><button class="btn" onclick="toggleClass()">toggleimg</button></li>
+            <li class="nav-item"><button class="btn" onclick="setRandomColor()">getRandomColor</button></li>
+
           </ul>
         </header>
       </div>
@@ -51,28 +49,28 @@
             <td>Charger</td>
             <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</td>
             <td class="amazon"><a href="https://www.amazon.de/Neues-Apple-iPad-Wi-Fi-128-GB/dp/B08J6PPZ24/">Link</a></td>
-            <td >100$</td>
+            <td class="price">100$</td>
           </tr>
           <tr >
             <td><img src="./earphones.jpg" alt="" width='100px'></td>
             <td>Earphones</td>
             <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</td>
             <td class="amazon"><a href="https://www.amazon.de/Neues-Apple-iPad-Wi-Fi-128-GB/dp/B08J6PPZ24/">Link</a></td>
-            <td>100$</td>
+            <td class="price">100$</td>
           </tr>
           <tr >
             <td colspan=><img src="./ipad.jfif" alt="" width='100px'></td>
             <td>Ipad</td>
             <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</td>
             <td class="amazon"><a href="https://www.amazon.de/Neues-Apple-iPad-Wi-Fi-128-GB/dp/B08J6PPZ24/">Link</a></td>
-            <td>100$</td>
+            <td class="price">100$</td>
           </tr>
           <tr >
             <td colspan=><img src="./iphonex.png" alt="" width='100px'></td>
             <td>Iphone X</td>
             <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</td>
             <td class="amazon"><a href="https://www.amazon.de/Neues-Apple-iPad-Wi-Fi-128-GB/dp/B08J6PPZ24/">Link</a></td>
-            <td>100$</td>
+            <td class="price">100$</td>
           </tr>
           <tr >
             <td colspan=><img src="./laptop.jpg" alt="" width='100px'></td>
@@ -162,11 +160,31 @@
 
       
 
-      const imageClass = document.getElementsByClassName('price')
+      const imageClass = document.querySelectorAll('img')
 
       function toggleClass() {
-        imageClass.classList.add('mystyle')
+        for (let i = 0; i < 5; i++){
+          
+          imageClass[i].classList.toggle('mystyle')
+          console.log(imageClass[i])
+        }
       }
+
+    function setRandomColor() {
+      const color = getRandomColor();
+
+      for (let price of document.getElementsByClassName("price")) {
+        price.style.color = color;
+      }
+    }
+
+    function getRandomColor() {
+      const red = Math.round(Math.random() * 255);
+      const green = Math.round(Math.random() * 255);
+      const blue = Math.round(Math.random() * 255);
+
+      return "rgb(" + red + ", " + green + ", " + blue + ")";
+    }
 
       
       
