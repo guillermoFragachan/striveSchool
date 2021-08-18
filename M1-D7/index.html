@@ -57,7 +57,7 @@
             <td><img src="./earphones.jpg" alt="" width='100px'></td>
             <td>Earphones</td>
             <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</td>
-            <td id="amazon"><a href="https://www.amazon.de/Neues-Apple-iPad-Wi-Fi-128-GB/dp/B08J6PPZ24/">Link</a></td>
+            <td class="amazon"><a href="https://www.amazon.de/Neues-Apple-iPad-Wi-Fi-128-GB/dp/B08J6PPZ24/">Link</a></td>
             <td>100$</td>
           </tr>
           <tr >
@@ -151,12 +151,16 @@
         footer.innerHTML = '<p class="text-center text-muted"id="footer">Fake, Address 23</p>'
       }
 
-
-      const amazonClass = document.getElementById('amazon')
       function changeAmazon(){
-        amazonClass.innerHTML = '<td>Fake Link</td>'
-
+        const amazon = document.getElementsByClassName('amazon')
+        for (let i = 0; i < 5; i++){
+          console.log(amazon[i])
+          amazon[i].innerHTML = 'Fake Link'
+        }
       }
+
+
+      
 
       const imageClass = document.getElementsByClassName('price')
 
