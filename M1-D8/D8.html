@@ -26,11 +26,9 @@
       const div = document.getElementsByTagName('div')
 
       const changePcontent = function () {
-        for (let i; i<div.length; i++){
-          let a = div[i].children.document.getElementsByTagName('p')
-        }
-        
-        //
+         let pDiv = document.querySelector("div p")
+        pDiv.innerText = "i changed the content of the paragraph"
+      
       };
 
       /* EXERCISE 4
@@ -92,6 +90,11 @@
       */
 
       const paintItGreen = function () {
+
+        const uls = document.getElementsByTagName('ul')
+        for (let i = 0; i<uls.length; i++){
+        uls[i].style.color = 'green'
+        }
         //
       };
 
@@ -100,6 +103,8 @@
       */
 
       const makeItClickable = function () {
+        const h1 = document.getElementById('h1')
+        h1.classList.toggle('change')
         //
       };
 
@@ -108,6 +113,9 @@
       */
 
       const changeFooterText = function () {
+        const footer = document.getElementById('footer')
+
+        footer.innerText="text"
         //
       };
 
@@ -116,9 +124,12 @@
       */
 
       const inputField = document.getElementById("input-field");
+      function consoleKey (){
+        return console.log('random text')
+      }
       // ...
 
-      /* EXERCISE 12
+      /* EXERCISE 12 / done
       Create a new welcome alert message when the page successfully loads.
       */
 
@@ -136,6 +147,8 @@
       addToTheSecond()
       addParagraph('added text')
       firstUlDisappear()
+      
+      //alert('page have loaded')
     }
     </script>
 
@@ -143,11 +156,14 @@
       .myHeading {
         color: red;
       }
+      .change{
+        color: green;
+      }
     </style>
   </head>
   <body>
     <header>
-      <h1 id="h1">This is the title of the page</h1>
+      <h1 onclick='makeItClickable()'id="h1">This is the title of the page</h1>
       <h2>This is the subtitle of the page</h2>
     </header>
 
@@ -177,12 +193,13 @@
           type="text"
           id="input-field"
           placeholder="input field for the exercise"
+          onkeyup="consoleKey()"
         />
       </div>
     </main>
 
-    <footer>
-      <p>And this text is just for the exercise too!</p>
+    <footer  >
+      <p onclick='changeFooterText()' id="footer">And this text is just for the exercise too!</p>
     </footer>
   </body>
 </html>
