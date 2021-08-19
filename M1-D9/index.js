@@ -28,7 +28,7 @@ function displayBingo(){
 
     
 
-    for (let cardNumber=1; cardNumber<77; cardNumber++){
+    for (let cardNumber=1; cardNumber<24; cardNumber++){
         let newCardNode = document.createElement('div')
         newCardNode.innerText= randomNumber() //change after to random number
         newCardNode.id= cardNumber
@@ -43,6 +43,8 @@ function displayBingo(){
     //console.log(bingoContainer)
 }
 
+
+
 function selectCell () {
     let cardNode = document.getElementsByClassName('numberSpot')
     let randomNumber = document.getElementById('displayNumber')
@@ -55,18 +57,95 @@ function selectCell () {
     
 
 }
+//- Take ALWAYS a new number (eg. avoid randoming the number 10 3 times)
 
 function numberGenerator(){
-    let randomNumber = Math.floor(Math.random()*99)
+
     let numberNode = document.getElementById('displayNumber')
-    numberNode.innerText=randomNumber
+    let randomNumber = Math.floor(Math.random()*99)
+    if (numberNode.innerText===randomNumber){
+
+        numberNode.innerText=Math.floor(Math.random()*99)
+   
     
+    
+    }else{
+        numberNode.innerText=randomNumber
+    }
+    
+    selectCell ()
 }
 
 
+
+//EXTRA: 
+//- Create a USER BOARD with 24 randomized numbers that highlights as the main board does
+//- Let the user choose HOW MANY user boards he's willing to play with and create them.
+
+function cardGenerator(){
+    let bingoContainer = document.getElementById('boardContainer')
+   
+    let cardContainerNode = document.createElement('div')
+
+    cardContainerNode.id
+    cardContainerNode.classList.add('bingoBoard')
+    bingoContainer.appendChild(cardContainerNode)
+
+    for (let cardNumber=1; cardNumber<24; cardNumber++){
+        let newCardNode = document.createElement('div')
+        newCardNode.innerText= randomNumber() //change after to random number
+        newCardNode.id= cardNumber
+        newCardNode.classList.add('numberSpot')
+
+        
+        cardContainerNode.appendChild(newCardNode)
+
+        
+
+    }
+
+    selectCell ()
+}
+
+function cardFiller(number){
+    let bingoContainer = document.getElementsByClassName('bingoBoard')
+
+    for (let cardNumber=1; cardNumber<24; cardNumber++){
+        let newCardNode = document.createElement('div')
+        newCardNode.innerText= randomNumber() //change after to random number
+        newCardNode.id= cardNumber
+        newCardNode.classList.add('numberSpot')
+
+        
+        bingoContainer[number].appendChild(newCardNode)
+
+    }
+}
+
+function displayUserBoard(){
+    let bingoContainer = document.getElementsByClassName('bingoBoard')
+    
+    for (let i = 0; i<bingoContainer.length; i++){
+
+        
+        cardFiller(i)
+    
+
+    }
+    
+}
+   
+
+    //<div class="numberSpot">13</div>
+
+
+
 window.onload = function() {
-    displayBingo()
+    //displayBingo()
     selectCell()
     numberGenerator()
     selectCell ()
+    displayUserBoard()
+
+
 }
