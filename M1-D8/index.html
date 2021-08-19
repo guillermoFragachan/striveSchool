@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+    <title>Accessing Elements in the DOM</title>
+
+
+    <style>
+      html {
+        font-family: sans-serif;
+        color: #333;
+      }
+      body {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 0 15px;
+      }
+      div div,
+      div article {
+        padding: 10px;
+        margin: 5px;
+        border: 1px solid #dedede;
+      }
+
+      .selected {
+        color: orange;
+        border-radius: 6px;
+        border-width: 2px;
+        border-color: orange;
+        border-style: solid;
+        padding: 4px;
+      }
+    </style>
+  </head>
+
+
+  <body>
+
+      <script lang="text/javascript">
+
+        const toggleSelectedDiv = function() {
+            let demoIdHeaderNode = document.getElementById("demo-id")
+            demoIdHeaderNode.classList.toggle("selected")
+        }
+
+        const toggleAllHeaders = function() {
+
+            let allOurHeaderNodes = document.querySelectorAll("h2")
+
+            /* THIS IS JUST A LONGER, MORE EXPLICIT VERSION OF THE BOTTOM ALTERNATIVE
+            
+            for (let i = 0; i < allOurHeaderNodes.length; i++) {
+                let header = allOurHeaderNodes[i]
+                header.classList.toggle("selected")
+            }*/
+
+            for (let header of allOurHeaderNodes){
+                header.classList.toggle("selected")
+            }
+        }
+
+        const createNewElement = function(eventData) {
+
+            // 'eventData' contains useful information about the event itself
+            // (coordinates of the click, key being pressed, the HTML node we interacted with...)
+
+            // --- Here we read the user input from the user-name textbox
+            let usernameInputNode = document.getElementById("user-name")
+            let userName = usernameInputNode.value
+
+            // --- Let's create a new 
+            let newElement = document.createElement("article")
+            // Creates this HTML code: <article></article>
+            newElement.innerText = `Hi, I'm ${userName}, and I clicked on X: ${eventData.screenX} Y: ${eventData.screenY}` // "Hi, I'm " + userName
+            // <article>Hi, I'm the new guy here</article>
+            newElement.style.color = "green"
+            // <article style="color:green;">Hi, I'm the new guy here</article>
+            newElement.id = "new-id"
+            // <article id="new-id" style="color:green;">Hi, I'm the new guy here</article>
+
+            // --- This way we can 'connect' our listener function to every click that happens on the newly created object
+            // - ALTERNATIVE 1
+            newElement.onclick = removeClickedElement
+            
+            // - ALTERNATIVE 2 (more complicated to write, more powerful: can connect several listeners to a single event)
+            // newElement.addEventListener("click", removeClickedElement)
+
+            // --- The new element still lives IN MEMORY ONLY, it's NOT attached to the DOM/PAGE
+            console.log(newElement)
+
+            // --- Let's find the parent of our newly created article
+            let containerNode = document.getElementById("article-container")
+
+            // --- Let's append the newly created element as the first child of the container node
+            containerNode.insertBefore(newElement, containerNode.children[0])
+        }
+
+        const removeClickedElement = function(eventData){
+
+            // 'eventData.target' points straight to the HTML Element that has been clicked! Super useful
+            let clickedElementNode = eventData.target
+
+            // We can then change its style and content...
+            clickedElementNode.style.color = "red"
+            clickedElementNode.innerText = "Ouch, I've been clicked!"
+
+            // ...or even remove that from the page
+            //clickedElementNode.remove()
+        }
+
+        window.onload = function() {
+           toggleSelectedDiv()
+
+           // Do all the stuff that needs to be done as soon as the page is fully loaded and ready to go
+
+           let userInputNode = document.getElementById("user-name")
+           userInputNode.onkeyup = changeText
+        }
+
+        const changeText = function() {          
+            let demoIdHeaderNode = document.getElementById("demo-id")
+            
+            let userInputNode = document.getElementById("user-name")
+
+            demoIdHeaderNode.innerText = userInputNode.value
+        }
+    </script>
+
+
+    <h1>Accessing Elements in the DOM</h1>
+
+    <button onclick="toggleSelectedDiv()">Toggle demo-id 'selected' class!</button>
+    <input onclick="toggleAllHeaders()" type="button" value="Toggle all H2 tags" />
+    
+    <!-- When we assign an event listener through HTML, we have to use the exact 'event' name if we want to get additional information about the event itself -->
+    <button onclick="createNewElement(event)">Toggle new element</button>
+
+    <br />
+    <br />
+
+    <label for="user-name">Username:</label>
+    <input id="user-name" type=text placeholder="Write your username here" />
+
+    <div>
+      <h2 id="demo-id">ID (#demo-id)</h2>
+      <div>Access me by ID</div>
+    </div>
+
+
+    <div>
+      <h2>Class (.demo-class)</h2>
+      <div class="demo-class">Access me by class (1)</div>
+      <div class="demo-class">Access me by class (2)</div>
+      <div class="demo-class">Access me by class (3)</div>
+      <div class="demo-class">Access me by class (4)</div>
+    </div>
+
+
+    <div>
+      <h2>Tag (article)</h2>
+      <div id="article-container">
+        <article>Access me by tag (1)</article>
+        <article>Access me by tag (2)</article>
+      </div>
+    </div>
+
+
+    <div id="demo-query">
+      <h2>Query Selector</h2>
+      <div>Access me by query</div>
+    </div>
+
+
+    <div>
+      <h2>Query Selector All</h2>
+      <div class="demo-query-all">Access me by query all (1)</div>
+      <div class="demo-query-all">Access me by query all (2)</div>
+    </div>
+
+
+    <h2>A more complex query</h2>
+    <div id="more-complex">
+      <ul>
+        <li>First element inside a list</li>
+        <li>Second element inside a list</li>
+        <li>Third element inside a list</li>
+      </ul>
+    </div>
+
+  </body>
+</html> 

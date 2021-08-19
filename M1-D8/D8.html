@@ -64,8 +64,11 @@
       
       const addParagraph = function (content) {
         const firstDiv = div[0]
+
         const newElement = document.createElement('p')
+
         firstDiv.appendChild(newElement)
+
         newElement.innerText=content
 
 
@@ -140,12 +143,12 @@
       */
 
       window.onload = function() {
-      changeTitle(h1)
+      changeTitle()
       addClassToTitle()
       changePcontent()
       changeUrls(links)
       addToTheSecond()
-      addParagraph('added text')
+      addParagraph('whatever')
       firstUlDisappear()
       
       //alert('page have loaded')
