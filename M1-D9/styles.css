@@ -1,0 +1,39 @@
+body{
+    background-color: antiquewhite;
+}
+
+.bingoBoard{
+        border-style: solid;
+    border-width: 3px;
+    border-color: #4a4a4a;
+    padding: 12px;
+    border-radius: 8px;
+    display: inline-block;
+    width: 60%;
+}
+
+.numberSpot {
+    background-color: darkgrey;
+    display: inline-block;
+    width: 20%;
+    min-height: 64px;
+    text-align: center;
+    font-size: x-large;
+    color: white;
+    font-weight: bold;
+    border-style: solid;
+    border-color: #2a2a2a;
+    border-radius: 8px;
+    margin: 3px;
+    padding-top: 32px;
+    cursor: pointer;
+}
+
+#button{
+    margin-left: 10px;
+    width: 92px;
+    height: 54px;
+    color: rgb(32, 32, 32);
+    background-color: #00db71;
+    font-weight: bolder;
+}
