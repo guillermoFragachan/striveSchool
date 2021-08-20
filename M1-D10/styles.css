@@ -73,6 +73,16 @@ td{
 
 .tr{
     border: 3px dotted blue;
+
+
+}
+
+.redbackground{
+    background-color: red;
+}
+
+.test{
+    background-color: black;
 }
 /* 
         CSS EXERCISES
