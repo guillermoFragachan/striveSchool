@@ -11,7 +11,7 @@
 
 <body>
     
-    <h1 id="firstHeading">Heading - HomeWork</h1>
+    <h1 id="firstHeading" onclick="deleteLastLetter()">Heading - HomeWork</h1>
 
 
 <div class="container">
@@ -21,12 +21,12 @@
     </ol>
     
 
-    <table class="table">
+    <table class="table" id="mainTable">
         <tr>
          <td rowspan="6">&nbsp; Shopping List 
             <table >
                 <tr >
-                    <th>Fruits</th>
+                    <th id="fruits" onclick=" changeTDbackground()">Fruits</th>
                     <th>Vegetables</th>
                     <th>Cleaning</th>
                     <th>Clothes</th>
@@ -74,6 +74,23 @@
          <td>&nbsp;dry it</td>
         </tr>
        </table>
+
+
+</div>
+
+<div class="container" id="container">
+    <table>
+        <tr id="result"> Result: </tr>
+        <tr id="sum">
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+        
+    </table>
+
+
 </div>
 
 <hr class="line">
@@ -86,6 +103,9 @@
     <li>Shopping list</li>
     <li>TODOs</li>
     </ul>
+    <button id="toggleTable" onclick=" toggleTable()"> hide and show table</button>
+    <button id="hide" onclick="hideIMG()">Hide IMG</button>
+    <button  onclick="randomDelete()">Delete randome TD </button>
 </div>
 
 <footer class="">

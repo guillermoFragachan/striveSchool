@@ -1,4 +1,5 @@
 
+
 const containerNode = document.getElementById('container')
 
 
@@ -71,6 +72,130 @@ function emptyList(){
 }
 
 
+function alert(){
+
+}
+
+function hideIMG(){
+    let IMGNode = document.getElementsByTagName('img')
+
+    for (let i = 0; i < IMGNode.length; i++) {
+        IMGNode[i].classList.add('hidden')
+        
+    }
+}
+
+function toggleTable() {
+    let tableNode = document.getElementById('mainTable')
+    tableNode.classList.toggle('hidden')
+}
+//do later
+function sumTD(){
+    let td = document.getElementById('sum')
+    console.log(td)
+    
+}
+
+
+function deleteLastLetter(){
+    let h1Node = document.getElementById('firstHeading')
+    let text = h1Node.innerHTML
+    let onecless = text.substring(0, text.length - 1)
+    h1Node.innerHTML=text.substring(0, text.length - 1)
+    console.log( )
+
+}
+
+function changeTDbackground(){
+    let fruits = document.getElementById('fruits')
+
+    fruits.classList.toggle('test')
+
+}
+
+
+function alrter(){
+    let element = document.getElementById('mainTable')
+    let elements = document.getElementsByTagName('a')
+    for (let i = 0; i < elements.length; i++) {
+        elements[i].addEventListener("mouseover", function(){console.log('alert')})
+
+    }
+
+        console.log(element)
+  
+}
+
+
+
+
+
+function randomeSelect(){
+    let amountOfTd = document.getElementsByTagName('td')
+    let numberBetween = Math.floor(Math.random()*amountOfTd.length)
+    return numberBetween
+}
+
+function randomDelete(){
+    let amountOfTd = document.getElementsByTagName('td')
+    amountOfTd[randomeSelect()].remove()
+
+
+
+}
+
+function tableRemove(){
+    let table = document.getElementById('mainTable')
+    table.remove()
+    
+}
+
+function changeColor(){
+    let element = document.getElementById('sum')
+    event.target.style.color = "blue"
+
+}
+
+function addPinkBorder(a){
+    let elements = document.getElementsByTagName('td')
+    console.log(elements)
+    for (let i = 0; i < elements.length; i++) {
+        elements[i].addEventListener("mouseover", function(){elements[i].style.backgroundColor = 'green'})
+        elements[i].addEventListener("mouseleave", function(){elements[i].style.backgroundColor = ''})
+        
+        
+    }
+
+}
+
+/*
+44) Write a function to sum every number inside the TD (if the content is numeric)
+
+*/
+
+function tableGenerator(){
+    let containerNode = document.getElementById('container')
+
+    let table = document.createElement('table')
+    containerNode.appendChild(table)
+
+    for (let i = 0; i < 4; i++) {
+        let trNode = document.createElement('tr')
+        trNode.innerHTML='dsdasdad'
+        table.appendChild(trNode)
+        for (let i = 0; i < 3; i++) {
+            let tdNode = document.createElement('td')
+            tdNode.innerHTML='123'
+            trNode.appendChild(tdNode)
+            
+        }
+
+    }
+
+
+
+}
+
 
 
 window.onload = function() {
@@ -81,7 +206,10 @@ window.onload = function() {
     //extraRow()
     //addClassToRow()
     //addNewElements('example')
-    emptyList()
-
+    //emptyList()
+    sumTD()
+    //alrter()
+    addPinkBorder()
+    
 
 }
