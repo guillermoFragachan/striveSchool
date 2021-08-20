@@ -1,5 +1,12 @@
+body{
+    width: 100%;
+    margin: auto;
+}
 .imgList {
     width:10%; 
+}
+h1 {
+    text-align: center;
 }
 .table{
     
@@ -10,9 +17,12 @@
     border-radius: 8px;
     display: inline-block;
     width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+    margin:auto;
     background-color: grey;
+    border: 3px solid green;
+    border-radius: 20px 20px;
+    font-size: x-large;
+    font-weight: bold;
     
     
 }
@@ -45,3 +55,26 @@
 footer{
     background-color: bisque;
 }
+
+a{
+    color: blueviolet;
+}
+
+p{
+    margin: 10px;
+}
+
+.hidden{
+    display: none;
+}
+td{
+    border: 1px solid green;
+}
+
+.tr{
+    border: 3px dotted blue;
+}
+/* 
+        CSS EXERCISES
+
+        20) Add a dotted red border to each tr (note: tr does not accept a border property ;-) ) */
