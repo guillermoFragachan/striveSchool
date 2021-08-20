@@ -115,10 +115,27 @@ function returnLongerArray(_array1, _array2){
 
 function sumOfArrays (_array1, _array2){
     let higherSum
-    
+    let sum1Array = 0
+    let sum2Array = 0
 
-    return _array1.reduce(add,0)
+    for (let i = 0; i < _array1.length; i++) {
+        sum1Array= sum1Array + _array1[i]
+        
+        
+    }
+    for (let i = 0; i < _array2.length; i++) {
+        sum2Array= sum2Array + _array2[i]
+        
+        
+    }
 
+    if (sum1Array>sum2Array) {
+        higherSum=_array1
+        
+    }else{
+        higherSum=_array2
+    }
+    return higherSum
 }
 
-console.log(sumOfArrays(longArray,shortArray))
+//console.log(sumOfArrays(longArray,shortArray))
