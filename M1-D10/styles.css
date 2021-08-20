@@ -21,7 +21,6 @@
 }
 
 .container{
-    display: inline-block;
     width: 50%;
     margin: auto;
     padding: 10px;
@@ -36,4 +35,13 @@
     margin-right: auto;
     background-color: #4a4a4a;
       
+}
+.element{
+    display: inline-table;
+    width: 20%;
+    
+}
+
+footer{
+    background-color: bisque;
 }
