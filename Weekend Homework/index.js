@@ -85,21 +85,18 @@ function textChange(){
 
     */
 
-function addRow2Table(){
-    let table = document.getElementById("myTable");
-    let row = table.insertRow(table.lenght);
-
-    let cell1 = row.insertCell(0);
-    let cell2 = row.insertCell(1);
-
-    cell1.innerHTML = "NEW CELL1";
-    cell2.innerHTML = "NEW CELL2";
+function addColumn2Table(){
+    let row = document.getElementById("categories")
+    console.log(row)
+    let cell1 = row.insertCell(row.length)
+    cell1.innerHTML = "Enrolled Students"
 }
 
 window.onload = function() {
     //headerCreator('Homework', 'Weekend exercises')
     //tableCreator()
     addLink()
+    addColumn2Table()
     //objectCreator('538', 'John', 'Smith','32','smith@gmail.com' )
 
 
