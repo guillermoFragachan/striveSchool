@@ -120,9 +120,25 @@ function add2List (){
 
 
 
+
+
+function addBtn2List(){
+    let lINode = document.getElementsByTagName('li')
+    
+    for (let i=0;i<lINode.length;i++){
+        let btnNode = document.createElement('button')
+        btnNode.classList='removeButton'
+        btnNode.innerText='  Remove Element'
+        btnNode.addEventListener('click', ()=>{
+            btnNode.parentNode.remove()
+        } )
+        lINode[i].appendChild(btnNode)
+    }
+}
+
+
+
 /*
-    EX12.: Add button for each item of the list. When pressed, the student is removed
-     from the list. 
 
     EX13.: Create a simple form with 5 fields: ID, Name, Surname, Age, Email
 
@@ -134,19 +150,8 @@ function add2List (){
     */
 
 
-function addBtn2List(){
-    let lINode = document.getElementsByTagName('li')
-    
-    for (let i=0;i<lINode.length;i++){
-        let btnNode = document.createElement('button')
-        btnNode.classList='removeButton'
-        btnNode.innerText='  Remove Element'
-        btnNode.addEventListener('click', ()=>{
-            lINode[i].remove()
-        } )
-        lINode[i].appendChild(btnNode)
-    }
-}
+
+
 
 window.onload = function() {
     //headerCreator('Homework', 'Weekend exercises')
