@@ -40,6 +40,7 @@ function tableCreator(_rows, _columns, _objects){
 
 }*/
 
+
 //creates a link into all the IDs 
 function addLink (){
     let idNode = document.getElementsByClassName('link')
@@ -76,20 +77,75 @@ function textChange(){
 }
 
 
-/*
-
-    EX8.: Add a new section with title "Enrolled Students"
-    EX9.: Add an empty UL or DIV inside this new section
-    EX10.: Add an extra column to the Table named "actions"
-
-
-    */
-
 function addColumn2Table(){
     let row = document.getElementById("categories")
     console.log(row)
     let cell1 = row.insertCell(row.length)
-    cell1.innerHTML = "Enrolled Students"
+    cell1.innerHTML = "Actions"
+}
+
+
+function addButton(){
+    let columns = document.querySelectorAll("tr")
+
+    for(i=1;i<columns.length;i++){
+
+    let actionsNode = document.createElement('td')
+    let buttonNode = document.createElement('button')
+    buttonNode.innerHTML='+'
+    buttonNode.classList='add2List'
+    actionsNode.appendChild(buttonNode)
+
+    columns[i].appendChild(actionsNode)
+    
+
+
+    }
+    let buttonNodes = document.getElementsByClassName('add2List')
+    for(let i = 0; i<buttonNodes.length;i++){
+        buttonNodes[i].addEventListener('click',add2List)
+    }
+
+    
+}
+
+
+function add2List (){
+    let listNode = document.getElementsByTagName('ul')[0]
+    let element = document.createElement('li')
+    element.innerHTML='New student'
+    listNode.appendChild(element)
+
+}
+
+
+
+/*
+    EX12.: Add button for each item of the list. When pressed, the student is removed
+     from the list. 
+
+    EX13.: Create a simple form with 5 fields: ID, Name, Surname, Age, Email
+
+    EX14.: Create a button "add students" which adds a new row to the table
+
+    EX15.: Add a "counter section" in which there is always the number of items in the 
+    List
+
+    */
+
+
+function addBtn2List(){
+    let lINode = document.getElementsByTagName('li')
+    
+    for (let i=0;i<lINode.length;i++){
+        let btnNode = document.createElement('button')
+        btnNode.classList='removeButton'
+        btnNode.innerText='  Remove Element'
+        btnNode.addEventListener('click', ()=>{
+            lINode[i].remove()
+        } )
+        lINode[i].appendChild(btnNode)
+    }
 }
 
 window.onload = function() {
@@ -97,7 +153,10 @@ window.onload = function() {
     //tableCreator()
     addLink()
     addColumn2Table()
+    addButton()
     //objectCreator('538', 'John', 'Smith','32','smith@gmail.com' )
+    addBtn2List()
+    
 
 
 }
