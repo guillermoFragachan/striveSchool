@@ -168,10 +168,7 @@ function addPinkBorder(a){
 
 }
 
-/*
-44) Write a function to sum every number inside the TD (if the content is numeric)
 
-*/
 
 function tableGenerator(){
     let containerNode = document.getElementById('container')
@@ -194,6 +191,32 @@ function tableGenerator(){
 
 
 
+}
+
+
+/*
+44) Write a function to sum every number inside the TD (if the content is numeric)
+
+1) find TD in a table
+2) get value of td
+3) Convert that value to number
+4) sum the values
+
+
+
+
+*/
+
+function ex44 () {
+    const tds = document.querySelectorAll("#tableid  td")
+    let sum = 0
+
+    for (let td of tds) {
+        const number = parseInt(td.innerHTML) // NaN
+        if (!Number.isNaN(number)) sum += number
+    }
+
+    return sum
 }
 
 
