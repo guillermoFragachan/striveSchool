@@ -58,22 +58,42 @@ function addLink (){
 
 }
 
-/*
-EX5.: Add a text input "textChange" for plain text
-    EX6.: Add a button next to "textChange", when pressed the title and 
-    the H1 of the page must be changed with the content of "textChange"
-
-    */
-
 
 function textChange(){
     let h1Node = document.getElementsByTagName('h1')[0]
     let inputNode = document.getElementById('changeText').value
 
-    h1Node.innerHTML=inputNode
+   
+
+    if (inputNode==='') {
+        alert('Write a valid input')
+    }else{
+        h1Node.innerHTML=inputNode
+    }
 
     console.log(inputNode)
 
+}
+
+
+/*
+
+    EX8.: Add a new section with title "Enrolled Students"
+    EX9.: Add an empty UL or DIV inside this new section
+    EX10.: Add an extra column to the Table named "actions"
+
+
+    */
+
+function addRow2Table(){
+    let table = document.getElementById("myTable");
+    let row = table.insertRow(table.lenght);
+
+    let cell1 = row.insertCell(0);
+    let cell2 = row.insertCell(1);
+
+    cell1.innerHTML = "NEW CELL1";
+    cell2.innerHTML = "NEW CELL2";
 }
 
 window.onload = function() {
